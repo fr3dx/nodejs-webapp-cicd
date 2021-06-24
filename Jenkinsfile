@@ -12,9 +12,9 @@ pipeline {
      
         stage('Publish image to Docker Hub') {
             steps {
-		        withDockerRegistry(credentialsId: 'dockerhub', url: '') {
-		        //sh 'docker login --username username --password-stdin < ~/my_passwd'
-		        //sh 'docker push ferencmolnar/nodewebapp:latest'
+		        //withDockerRegistry(credentialsId: 'dockerhub', url: '') {
+		            //sh 'docker login --username username --password-stdin < ~/my_passwd'
+		            //sh 'docker push ferencmolnar/nodewebapp:latest'
 			echo "$BUILD_TAG is build tagxxxxx"
 			//image.push([$BUILD_TAG])
 		    }
@@ -23,7 +23,7 @@ pipeline {
      
         stage('Run Docker container on Jenkins Agent') {
             steps {
-                sh "docker run -d -p 80:80 $BUILD_TAG"
+                //sh "docker run -d -p 80:80 $BUILD_TAG"
             }
         }
 	//chech your container if you want before delete countdown 60s
