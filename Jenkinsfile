@@ -22,13 +22,13 @@ pipeline {
      
         stage('Run Docker container on Jenkins Agent') {
             steps {
-                sh "docker run -d -p 80:80 ferencmolnar/nodewebapp"
+                sh "docker run -d -p 80:80 $BUILD_TAG"
             }
         }
 	//chech your container if you want before delete countdown 60s
 	stage('Remove that container after testing') {
             steps {
-		sh 'echo $BUILD_TAG - container removed completed you can repeat this pipeline'
+		sh "echo $BUILD_TAG - container removed completed you can repeat this pipeline"
             }
         }
     }
