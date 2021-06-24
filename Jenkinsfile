@@ -18,7 +18,6 @@ pipeline {
 			image.push '$BUILD_TAG:latest'
 		    }
              }
-    	}
      
         stage('Run Docker container on Jenkins Agent') {
             steps {
