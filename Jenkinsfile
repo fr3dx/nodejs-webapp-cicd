@@ -15,7 +15,7 @@ pipeline {
 		        withDockerRegistry(credentialsId: 'dockerhub', url: '') {
 		        //sh 'docker login --username username --password-stdin < ~/my_passwd'
 		        //sh 'docker push ferencmolnar/nodewebapp:latest'
-			image.push('$BUILD_TAG')
+			image.push([$BUILD_TAG])
 		    }
              }
 	}
