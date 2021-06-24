@@ -7,6 +7,7 @@ pipeline {
                 //sh 'docker build -t nodewebapp:latest .' 
                 sh 'docker tag nodewebapp:latest ferencmolnar/nodewebapp:latest'
                 //sh 'docker tag samplewebapp ferencmolnar/nodewebapp:$BUILD_NUMBER'
+		sh 'echo $BUILD_TAG'
                
             }
         }
