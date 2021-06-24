@@ -28,7 +28,7 @@ pipeline {
 	//chech your container if you want before delete countdown 60s
 	stage('Remove that container after testing') {
             steps {
-		sh "echo $BUILD_TAG - container removed completed you can repeat this pipeline"
+		echo '$BUILD_TAG - container removed completed you can repeat this pipeline'
             }
         }
     }
